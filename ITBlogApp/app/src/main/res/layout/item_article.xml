@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".adapter.viewholder.ArticleViewHolder">
+
+    <data>
+
+        <variable
+            name="entity"
+            type="com.hacknife.study.entity.Article" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    app:imgUrl="@{entity.author.avatar}"
+                    tools:src="@drawable/app_logo" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="60dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{entity.author.name}"
+                        android:textColor="#494949"
+                        android:textSize="14sp"
+                        tools:text="仗剑纵酒" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/grey_colorAccent"
+                            android:textSize="12sp"
+                            app:textTime="@{entity.created}"
+                            tools:text="2019-12-30 12:30" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:textColor="@color/grey_colorAccent"
+                            android:textSize="12sp"
+                            app:textRead="@{entity.views}"
+                            tools:text="157浏览" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:paddingHorizontal="20dp"
+                android:text="@{entity.title}"
+                android:textColor="#3C3C3C"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="10dp"
+                android:paddingHorizontal="20dp"
+                android:text="@{entity.summary}"
+                android:textColor="#7C7C7C"
+                android:textSize="14sp"
+                tools:text="1.函数把自己放入队列和返回一个未完成的Future对象 2.之后当值可用时，Future带着值变成完成状态。  为了获得..." />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="#F3F3F3" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</layout>

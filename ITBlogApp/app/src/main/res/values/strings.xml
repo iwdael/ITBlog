@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">攻城狮</string>
+    <string name="channel_classify">分类</string>
+    <string name="tag_classify">标签</string>
+</resources>
